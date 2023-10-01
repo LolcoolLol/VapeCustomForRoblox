@@ -353,21 +353,18 @@ Connections.Kill = lPlayer.CharacterAdded:Connect(function()
             local oldTeamColor = v.TeamColor;
             repeat task.wait()
                 local thisTween = nil;
-                thisTween =  TweenService:Create(lPlayer.Character:FindFirstChild("HumanoidRootPart"), TweenInfo.new(.2,Enum.EasingStyle.Linear, Enum.EasingDirection.Out), { -- Enum.EasingStyle.Linear, Enum.EasingDirection.Out
+                thisTween =  TweenService:Create(lPlayer.Character:FindFirstChild("HumanoidRootPart"), TweenInfo.new(0.64,Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { -- Enum.EasingStyle.Linear, Enum.EasingDirection.Out
                     CFrame = v.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,1)
                 })
                 thisTween:Play()
                 thisTween.Completed:Wait()
                 task.wait(.1)
-                thisTween =  TweenService:Create(lPlayer.Character:FindFirstChild("HumanoidRootPart"), TweenInfo.new(.4,Enum.EasingStyle.Linear, Enum.EasingDirection.Out), { -- Enum.EasingStyle.Linear, Enum.EasingDirection.Out
+                thisTween =  TweenService:Create(lPlayer.Character:FindFirstChild("HumanoidRootPart"), TweenInfo.new(0.64,Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { -- Enum.EasingStyle.Linear, Enum.EasingDirection.Out
                     CFrame = v.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,1)
                 })
                 thisTween:Play()
                 thisTween.Completed:Wait()
                 task.wait(.1)
-                if GetMagnitude(lPlayer.Character:FindFirstChild("HumanoidRootPart"), v.Character.HumanoidRootPart) > 30 then -- if the tween lags u back or fails then we kill the player and retry
-                    KillSelf()
-                end
             until v == nil or v.Team ~= oldTeam or v.TeamColor ~= oldTeamColor or not lPlayer:isAlive(v) or not lPlayer:isAlive()
 	        if lPlayer:isAlive() then
                     table.insert(killed, v.Name);
@@ -382,3 +379,42 @@ end)
 KillSelf()
 print("YESSSSS")
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- no
